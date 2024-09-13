@@ -1,0 +1,12 @@
+{
+  "name": "hello-graphql",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "@apollo/server": "^4.11.0",
+    "@types/node": "^22.5.4",
+    "graphql": "^16.9.0"
+  }
+}
