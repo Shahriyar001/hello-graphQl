@@ -8,10 +8,5 @@
     "moduleResolution": "node",
     "esModuleInterop": true,
     "types": ["node"]
-  },
-  "type": "module",
-  "scripts": {
-    "compile": "tsc",
-    "start": "npm run compile && node ./dist/index.js"
   }
 }
