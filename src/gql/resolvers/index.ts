@@ -7,5 +7,9 @@ export const resolvers = {
       const result = db.products.find((pd) => pd.id === args.productId);
       return result;
     },
+    categories: () => db.categories,
+    category: (parent: any, args: any, context) => {
+      // const result = db.categories.find()
+    },
   },
 };
