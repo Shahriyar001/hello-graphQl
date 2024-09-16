@@ -8,8 +8,24 @@ export const resolvers = {
       return result;
     },
     categories: () => db.categories,
-    category: (parent: any, args: any, context) => {
-      // const result = db.categories.find()
+    category: (parent: any, args: { categoryId: string }, context) => {
+      return db.categories.find((category) => category.id === args.categoryId);
+    },
+  },
+  Product: {
+    category: (parent, args, context) => {
+      const result = db.categories.find(
+        (category) => category.id === parent.categoryId
+      );
+      return result;
+    },
+  },
+  Category: {
+    products: (parent, args, context) => {
+      const result = db.products.filter(
+        (product) => product.categoryId === parent.id
+      );
+      return result;
     },
   },
 };
