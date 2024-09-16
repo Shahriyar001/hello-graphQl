@@ -13,18 +13,16 @@ export const resolvers = {
     },
   },
   Product: {
-    category: (parent, args, context) => {
-      const result = db.categories.find(
-        (category) => category.id === parent.categoryId
-      );
-      return result;
+    category: ({ categoryId }, args: any, context: any) => {
+      return db.categories.find((category) => category.id === categoryId);
+    },
+    reviews: ({ id }, args: any, context: any) => {
+      return db.reviews.filter((review) => review.productId === id);
     },
   },
   Category: {
-    products: (parent, args, context) => {
-      const result = db.products.filter(
-        (product) => product.categoryId === parent.id
-      );
+    products: ({ id }, args: any, context: any) => {
+      const result = db.products.filter((product) => product.categoryId === id);
       return result;
     },
   },
